@@ -1,7 +1,7 @@
 # Тут мы рассматриваем пример увеличения фотографии или обьекта изображения.
 import cv2
 
-img = cv2.imread('kartinki-vyzdoravlivaj-1.jpg')
+img = cv2.imread('Open_CV/kartinki-vyzdoravlivaj-1.jpg')
 print(img.shape)
 
 img = cv2.resize(img, (1000, 1000))
