@@ -6,6 +6,8 @@
 # 4 4 -> 2 2
 # 5 6 -> 2 3
 
+
+# Вариант через нахождение корня квадратного уравнения
 """
 import math
 sum = int(input('Input Sum of numbers: '))
@@ -16,7 +18,8 @@ if x % 1 != 0:
 else:    
     print(f'X = {round(x)}, Y = {sum - round(x)}')
 """
-        
+
+# Вариант через перебор двух чисел        
 sum = int(input('Input Sum of numbers: '))
 prod = int(input('Input Product of numbers: '))
 for i in range(1, 1001):
