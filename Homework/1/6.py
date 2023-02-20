@@ -7,19 +7,29 @@
 # 385916 -> yes
 # 123456 -> no
 
-sum_1 = 0
-sum_2 = 0
-ticket = int(input('Введите номер билета: '))
-for i in range(6):
-    if i < 3:
-        sum_1 += ticket % 10
-        ticket //= 10
-    else:
-        sum_2 += ticket % 10
-        ticket //= 10
-if sum_1 == sum_2:
-    print('YES')
+# sum_1 = 0
+# sum_2 = 0
+# ticket = int(input('Введите номер билета: '))
+# for i in range(6):
+#     if i < 3:
+#         sum_1 += ticket % 10
+#         ticket //= 10
+#     else:
+#         sum_2 += ticket % 10
+#         ticket //= 10
+# if sum_1 == sum_2:
+#     print('YES')
+# else:
+#     print('NO')
+
+ticket = input("введите номер билета")
+result = []
+for i in ticket:
+    result.append(int(i))
+# print(result)
+if sum(result[:3]) == sum(result[3:]):
+    print("yes")
 else:
-    print('NO')
+    print('no')
     
     
