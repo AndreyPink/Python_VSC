@@ -11,20 +11,20 @@
 # Input: 5 -> 5 1 6 5 9
 # Output: 1 9
 
-"""
-number_watermelon = int(input('Input number of watermelon: '))
-max_weight_index = 0
-min_weight_index = 0
-weight_list = []
-for i in range(number_watermelon):
-    weight_list.append(int(input(f'Input weight of {i + 1} watermelon: ')))
-    if weight_list[i] > weight_list[max_weight_index]:
-        max_weight_index = i
-    elif weight_list[i] < weight_list[min_weight_index]:
-        min_weight_index = i     
-print(f'Min weight = {weight_list[min_weight_index]}, Max weight = {weight_list[max_weight_index]}')
-"""
+# # Вариант решения через список и индексы
+# number_watermelon = int(input('Input number of watermelon: '))
+# max_weight_index = 0
+# min_weight_index = 0
+# weight_list = []
+# for i in range(number_watermelon):
+#     weight_list.append(int(input(f'Input weight of {i + 1} watermelon: ')))
+#     if weight_list[i] > weight_list[max_weight_index]:
+#         max_weight_index = i
+#     elif weight_list[i] < weight_list[min_weight_index]:
+#         min_weight_index = i     
+# print(f'Min weight = {weight_list[min_weight_index]}, Max weight = {weight_list[max_weight_index]}')
 
+# Вариант решения с использованием веса 1-го арбуза в качестве точки отсчета
 number_watermelon = int(input('Input number of watermelon: '))
 weight_1 = int(input(f'Input weight of 1 watermelon: '))
 max_weight = weight_1
