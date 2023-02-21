@@ -23,8 +23,7 @@ final_count = 0
 temperature = 0
 print('Temperature of days:')
 for i in range(days):
-    delta = random.randint(-2, 2)
-    temperature += delta
+    temperature += random.randint(-2, 2)
     print(temperature, end=' ')
     if temperature > 0:
         temporary_count += 1    
