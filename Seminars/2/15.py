@@ -24,13 +24,28 @@
 #         min_weight_index = i     
 # print(f'Min weight = {weight_list[min_weight_index]}, Max weight = {weight_list[max_weight_index]}')
 
-# Вариант решения с использованием веса 1-го арбуза в качестве точки отсчета
+# # Вариант решения с использованием веса 1-го арбуза в качестве точки отсчета
+# number_watermelon = int(input('Input number of watermelon: '))
+# weight_1 = int(input(f'Input weight of 1 watermelon: '))
+# max_weight = weight_1
+# min_weight = weight_1
+# for i in range(number_watermelon - 1):
+#     weight = int(input(f'Input weight of {i + 2} watermelon: '))
+#     if weight > max_weight:
+#         max_weight = weight
+#     elif weight < min_weight:
+#         min_weight = weight    
+# print(f'Min weight = {min_weight}, Max weight = {max_weight}')
+
+import random
 number_watermelon = int(input('Input number of watermelon: '))
-weight_1 = int(input(f'Input weight of 1 watermelon: '))
+weight_1 = random.randint(1, 100)
+print(f'Weight of 1 watermelon: {weight_1}')
 max_weight = weight_1
 min_weight = weight_1
 for i in range(number_watermelon - 1):
-    weight = int(input(f'Input weight of {i + 2} watermelon: '))
+    weight = random.randint(1, 100)
+    print(f'Weight of {i + 2} watermelon: {weight}')
     if weight > max_weight:
         max_weight = weight
     elif weight < min_weight:

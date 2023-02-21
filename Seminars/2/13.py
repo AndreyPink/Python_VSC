@@ -16,15 +16,20 @@
 # Input: 6 -> -20 30 -40 50 10 -10
 # Output: 2
 
+import random
 days = int(input('Input number of days: '))
 temporary_count = 0
 final_count = 0
+temperature = 0
+print('Temperature of days:')
 for i in range(days):
-    temperature = int(input(f'Input temperature in {i + 1} day: '))
+    delta = random.randint(-2, 2)
+    temperature += delta
+    print(temperature, end=' ')
     if temperature > 0:
         temporary_count += 1    
         if temporary_count > final_count:
             final_count = temporary_count
     else:
         temporary_count = 0
-print(f'Thaw duration = {final_count} days')
+print(f'\nThaw duration = {final_count} days')
