@@ -8,24 +8,23 @@
 
 
 # Вариант через нахождение корня квадратного уравнения
-"""
 import math
 sum = int(input('Input Sum of numbers: '))
 prod = int(input('Input Product of numbers: '))
-x = abs(-sum + math.sqrt(sum ** 2 - 4 * prod)) / 2
+x = (sum + math.sqrt(sum ** 2 - 4 * prod)) / 2
 if x % 1 != 0:
     print('Input error')
 else:    
     print(f'X = {round(x)}, Y = {sum - round(x)}')
-"""
 
-# Вариант через перебор двух чисел        
-sum = int(input('Input Sum of numbers: '))
-prod = int(input('Input Product of numbers: '))
-for i in range(1, 1001):
-    for j in range(1, 1001):
-        if sum == i + j and prod == i * j:
-            x, y = i, j
-print(f'X = {x}, Y = {y}')        
+
+# # Вариант через перебор и подбор комбинации из двух чисел        
+# sum = int(input('Input Sum of numbers: '))
+# prod = int(input('Input Product of numbers: '))
+# for i in range(1, 1001):
+#     for j in range(1, 1001):
+#         if sum == i + j and prod == i * j:
+#             x, y = i, j
+# print(f'X = {x}, Y = {y}')        
 
 
