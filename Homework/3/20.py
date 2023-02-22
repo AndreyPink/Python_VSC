@@ -22,3 +22,13 @@
 # ноутбук
 # Вывод:
 # 12
+
+# {A, E, I, O, U, L, N, S, T, R,    D, G   B, C, M, P   F, H, V, W, Y  K   J, X  Q, Z  }
+my_dict = {'A': 1, 'B': 2}
+my_word = list(input('Input word: '))
+count = 0
+for elem in my_word:
+    if elem.upper() in my_dict:
+        count += my_dict[elem.upper()]
+print(count)
+
