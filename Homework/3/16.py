@@ -7,3 +7,11 @@
 # 1 2 3 4 5
 # 3
 # -> 1
+
+import random
+long_mass = int(input('Input long of mass: '))
+my_number = int(input('Input number for search: '))
+random_mass = [random.randint(1,10) for _ in range(long_mass)]
+print(f'Random mass: {random_mass}')
+print(f'Number of "{my_number}" in mass = {random_mass.count(my_number)}')
+
