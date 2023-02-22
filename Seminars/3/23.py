@@ -4,3 +4,10 @@
 # с предыдущим номером)
 # Input: [0, -1, 5, 2, 3]
 # Output: 2 (-1 < 5, 2 < 3)
+
+mass = [0, -1, 5, 2, 3]
+count = 0
+for i in range(len(mass) - 1):
+    if mass[i + 1] > mass[i]:
+        count += 1
+print(count)
