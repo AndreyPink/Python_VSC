@@ -16,7 +16,7 @@ if x % 1 != 0:
     print('Input error')
 else:    
     print(f'X = {round(x)}, Y = {sum - round(x)}')
-
+    
 
 # # Вариант через перебор и подбор комбинации из двух чисел        
 # sum = int(input('Input Sum of numbers: '))

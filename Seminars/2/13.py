@@ -18,7 +18,7 @@
 
 import random
 days = int(input('Input number of days: '))
-temporary_count = 0
+temporary_count = 0  
 final_count = 0
 temperature = 0
 print('Temperature of days:')
