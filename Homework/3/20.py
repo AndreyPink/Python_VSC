@@ -23,12 +23,19 @@
 # Вывод:
 # 12
 
-# {A, E, I, O, U, L, N, S, T, R,    D, G   B, C, M, P   F, H, V, W, Y  K   J, X  Q, Z  }
-my_dict = {'A': 1, 'B': 2}
+
+my_dict = {1: 'A,E,I,O,U,L,N,S,T,R,А,В,Е,И,Н,О,Р,С,Т', 
+           2: 'D,G,Д,К,Л,М,П,У', 
+           3: 'B,C,M,P,Б,Г,Ё,Ь,Я',
+           4: 'F,H,V,W,Y,Й,Ы',
+           5: 'K,Ж,З,Х,Ц,Ч',
+           8: 'J,X,Ш,Э,Ю',
+           10: 'Q,Z,Ф,Щ,Ъ'}
 my_word = list(input('Input word: '))
 count = 0
 for elem in my_word:
-    if elem.upper() in my_dict:
-        count += my_dict[elem.upper()]
-print(count)
+    for key, value in my_dict.items():
+        if elem.upper() in value:
+            count += key
+print(f'Word value: {count}')
 
