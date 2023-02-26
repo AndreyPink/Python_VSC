@@ -9,9 +9,9 @@
 # -> 1
 
 import random
-long_mass = int(input('Input long of mass: '))
+length_mass = int(input('Input length of mass: '))
 my_number = int(input('Input number for search: '))
-random_mass = [random.randint(1,10) for _ in range(long_mass)]
+random_mass = [random.randint(1,10) for _ in range(length_mass)]
 print(f'Random mass: {random_mass}')
 print(f'Number of "{my_number}" in mass = {random_mass.count(my_number)}')
 

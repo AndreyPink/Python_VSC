@@ -9,12 +9,12 @@
 # -> 5
 
 import random
-long_mass = int(input('Input long of mass: '))
+length_mass = int(input('Input length of mass: '))
 my_number = int(input('Input number for search: '))
-random_mass = [random.randint(1,10) for _ in range(long_mass)]
+random_mass = [random.randint(1,10) for _ in range(length_mass)]
 min_delta = max(random_mass)
 
-for index in range(long_mass):
+for index in range(length_mass):
     if abs(my_number - random_mass[index]) < min_delta:
         min_delta = abs(my_number - random_mass[index])
         search_number = random_mass[index]
