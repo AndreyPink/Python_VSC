@@ -11,8 +11,8 @@
 # помощью товарищи обратились к Вам, студентам.
 
 import random
-long_list = int(input('Input long of list: '))
-my_list = [random.randint(0,10) for _ in range(long_list)]
+length_list = int(input('Input length of list: '))
+my_list = [random.randint(0,10) for _ in range(length_list)]
 print(my_list)
 if 0 in my_list:
     print(max(my_list[:my_list.index(0)]))
