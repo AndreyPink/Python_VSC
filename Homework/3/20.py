@@ -31,7 +31,7 @@ my_dict = {1: 'A,E,I,O,U,L,N,S,T,R,А,В,Е,И,Н,О,Р,С,Т',
            5: 'K,Ж,З,Х,Ц,Ч',
            8: 'J,X,Ш,Э,Ю',
            10: 'Q,Z,Ф,Щ,Ъ'}
-my_word = list(input('Input word: '))
+my_word = input('Input word: ')
 count = 0
 for elem in my_word:
     for key, value in my_dict.items():
