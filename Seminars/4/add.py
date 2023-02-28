@@ -12,34 +12,29 @@
 # - 3 этап: [3, 1, 5, 5, 3, 5, 4]
 # - 4 этап: [3, 1, 5, 4]
 
-
 # первый этап
 import random
-my_list = [random.randint(1000, 9999) for _ in range(5)]
+my_list_1 = [random.randint(1000, 9999) for _ in range(5)]
 my_list_2 = []
 my_list_3 = []
 num = input('Input number: ')
 
-
 # второй этап
-for value in my_list:
-    el = str(value)
-    if num in el:
-        el = el.replace(num, '')
-    my_list_2.append(el)
+for value in my_list_1:
+    if num in str(value):
+        value = str(value).replace(num, '')
+    my_list_2.append(value)
 
 # третий этап
 for value in my_list_2:
-    sum_num = sum(int(el) for el in value)
-    while sum_num > 9:
-        sum_num = sum(int(el) for el in str(sum_num))
-    my_list_3.append(sum_num)
+    while int(value) > 9:
+        value = sum(int(elem) for elem in str(value))
+    my_list_3.append(value)
 
 # четвертый этап
 my_list_4 = set(my_list_3)
 
-
-print(my_list)
+print(my_list_1)
 print(my_list_2)
 print(my_list_3)
 print(my_list_4)
