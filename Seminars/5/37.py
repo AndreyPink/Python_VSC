@@ -16,12 +16,12 @@
 # number = int(input('Input length of list: '))    
 # print(f'Reverse list: {print_list(number)}')
 
+
 import random
-def print_list(num, count = 0, my_list = ''):
-    if count < num:
-        return print_list(num, count + 1, my_list + ' ' + str(random.randint(1,9)))
-    print(f'Original list:{my_list}')
-    return my_list[::-1]
-    
-number = int(input('Input length of list: '))    
-print(f'Reverse list: {print_list(number)}')
+def print_list(num):
+    if num > 0:
+        print_list(num - 1)
+        print(random.randint(1, 9), end=' ')
+
+number = int(input('Input length of list: '))
+print_list(number)
