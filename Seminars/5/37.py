@@ -6,19 +6,17 @@
 # Output: 4 3
 
 
-# import random
-# def create_seq(num, count = 0, my_list = ''):
-#     if count < num:
-#         return create_seq(num, count + 1, my_list + ' ' + str(random.randint(1,9)))
-#     print(f'Original list:{my_list}')
-#     return my_list[::-1]
+import random
+def create_seq(num, count = 0, my_list = ''):
+    if count < num:
+        return create_seq(num, count + 1, my_list + ' ' + str(random.randint(1,9)))
+    print(f'Original list:{my_list}')
+    return my_list[::-1]
     
-# number = int(input('Input length of list: '))    
-# print(f'Reverse list: {create_seq(number)}')
+number = int(input('Input length of list: '))    
+print(f'Reverse list: {create_seq(number)}')
 
-
-
-def rev_seq(seq = '3 4'):
-    return seq[::-1]
-print(rev_seq())
+# def rev_seq(seq = '3 4'):
+#     return seq[::-1]
+# print(rev_seq())
 
