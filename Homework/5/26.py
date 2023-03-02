@@ -3,3 +3,11 @@
 # помощью рекурсии.
 # A = 3; B = 5 -> 243 (3⁵)
 # A = 2; B = 3 -> 8
+
+def degree(a, b):
+    if b > 1:
+        return a * degree(a, b-1)
+    else:
+        return a
+    
+print(degree(3, 5))
