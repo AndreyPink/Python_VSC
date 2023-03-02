@@ -12,4 +12,6 @@ def sum(a, b):
     else:
         return a
 
-print(sum(2, 2))
+num_1 = int(input('Input num_1: '))    
+num_2 = int(input('Input num_2: '))   
+print(f'Sum numbers {num_1}+{num_2}={sum(num_1, num_2)}')

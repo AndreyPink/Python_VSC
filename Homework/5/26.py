@@ -9,5 +9,8 @@ def degree(a, b):
         return a * degree(a, b-1)
     else:
         return a
-    
-print(degree(3, 5))
+
+num_1 = int(input('Input num_1: '))    
+num_2 = int(input('Input num_2: '))   
+print(f'{num_1}^{num_2}={degree(num_1, num_2)}')
+
