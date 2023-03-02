@@ -16,14 +16,18 @@
 
 import random
 amount_bush = int(input('Input amount of bush: '))
-number_bush = int(input('Input number of bush: '))
+max_sum = 0
 garden_list = [random.randint(1,10) for _ in range(amount_bush)]
 print(f'Garden/bush: {garden_list}')
-if number_bush == 1:
-    max_berries = garden_list[-1] + sum(garden_list[:2])
-elif number_bush == amount_bush:
-    max_berries = sum(garden_list[amount_bush-2:]) + garden_list[0]
-else:
-    max_berries = sum(garden_list[number_bush-2:number_bush+1])
-print(f'Max of berries: {max_berries}')
+for number_bush in range(amount_bush): 
+    if number_bush == 1:
+        max_berries = garden_list[-1] + sum(garden_list[:2])
+    elif number_bush == amount_bush:
+        max_berries = sum(garden_list[amount_bush-2:]) + garden_list[0]
+    else:
+        max_berries = sum(garden_list[number_bush-2:number_bush+1])
+    if max_berries > max_sum:
+        max_sum = max_berries
+print(f'Max of berries: {max_sum}')
+
 
