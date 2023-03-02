@@ -21,7 +21,7 @@ garden_list = [random.randint(1,10) for _ in range(amount_bush)]
 print(f'Garden/bush: {garden_list}')
 for number_bush in range(amount_bush): 
     if number_bush == 1:
-        max_berries = garden_list[-1] + sum(garden_list[:2])
+        max_berries = garden_list[-1] + sum(garden_list[:2]) 
     elif number_bush == amount_bush:
         max_berries = sum(garden_list[amount_bush-2:]) + garden_list[0]
     else:
