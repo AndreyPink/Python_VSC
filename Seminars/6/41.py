@@ -11,3 +11,8 @@
 # 1 2 3 4 5  1 5 1 5 1
 # Вывод:     Вывод:
 # 0          2
+
+from random import randint
+my_list = [randint(1,9) for _ in range(int(input('Input length mass: ')))]
+print(f'List: {my_list}')
+print(f'Count = {len([i for i in range(1, len(my_list)-1) if (my_list[i+1] < my_list[i] > my_list[i-1])])}')
