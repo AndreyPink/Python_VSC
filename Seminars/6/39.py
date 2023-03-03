@@ -13,3 +13,8 @@
 # Вывод:
 # 3 3 2 12
 
+from random import randint
+list_1 = [randint(1,20) for _ in range(int(input('Input length 1 mass: ')))]
+list_2 = [randint(1,20) for _ in range(int(input('Input length 2 mass: ')))]
+print(f'Mass_1: {list_1}\nMass_2: {list_2}')
+print(f'New mass: {[elem for elem in list_1 if elem not in list_2]}')
