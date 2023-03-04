@@ -9,7 +9,7 @@
 # 1 2 3 2 3   2
 
 from random import randint
-my_list = [randint(1,9) for _ in range(int(input('Input length mass: ')))]
+my_list = [randint(1,9) for _ in range(int(input('Input length list: ')))]
 check_list = {elem: my_list.count(elem)//2 for elem in my_list if my_list.count(elem)//2 > 0}
 print(f'Sorted original list: {sorted(my_list)}')
 print(f'Check list: {check_list}')
