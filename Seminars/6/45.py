@@ -5,8 +5,7 @@
 # По данному числу k выведите все пары дружественных
 # чисел, каждое из которых не превосходит k. Программа
 # получает на вход одно натуральное число k, не
-# превосходящее 105
-# . Программа должна вывести все
+# превосходящее 10^5. Программа должна вывести все
 # пары дружественных чисел, каждое из которых не
 # превосходит k. Пары необходимо выводить по одной в
 # строке, разделяя пробелами. Каждая пара должна быть
@@ -15,3 +14,16 @@
 
 # Ввод:     Вывод:
 # 300       220 284
+
+max_num = int(input('Input number: '))
+num_dict = {}
+friendly_dict = {}
+for num in range(1, max_num):
+    list_dev = [dev for dev in range(1, num) if num % dev == 0]
+    num_dict[num] = sum(list_dev)
+for key_1, value_1 in num_dict.items():
+    for key_2, value_2 in num_dict.items():
+        if key_1 == value_2 and value_1 == key_2 and key_1 != value_1 and key_1 not in friendly_dict.values():
+            friendly_dict[key_1] = value_1
+[print(key, value) for key, value in friendly_dict.items()]
+
