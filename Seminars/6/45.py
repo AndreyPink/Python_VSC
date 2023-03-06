@@ -37,8 +37,7 @@ for num in range(1, max_num):
     num_list.append(sum(list_dev))
 for i in range(1, len(num_list)):
     for j in range(1,len(num_list)):
-        if i == num_list[j-1] and num_list[i-1] == j and i != num_list[i-1] and i not in friendly_list:
+        if i == num_list[j-1] and num_list[i-1] == j and i != num_list[i-1]:
             friendly_list.append(i)
-            friendly_list.append(num_list[i-1])
 [print(friendly_list[i], friendly_list[i+1]) for i in range(0, len(friendly_list), 2)]
 
