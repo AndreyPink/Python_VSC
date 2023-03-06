@@ -9,7 +9,7 @@ import random
 length_list = int(input('Input length of list: '))
 my_range = [int(input(f'Input {i+1} border of range: ')) for i in range(2)]
 my_list = [random.randint(-10, 20) for elem in range(length_list)]
-index_list = [index for index in range(length_list) if (my_list[index] >= my_range[0] and my_list[index] <= my_range[1])]
+index_list = [index for index in range(length_list) if (my_range[0] <= my_list[index] <= my_range[1])]
 print(f'My list: {my_list}')
 print(f'Index list: {index_list}')
 
