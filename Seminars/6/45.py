@@ -30,14 +30,14 @@
 
 # Решение с помощью списков
 max_num = int(input('Input number: '))
-num_list = []
+sum_list = []
 friendly_list = []
 for num in range(1, max_num):
     list_dev = [dev for dev in range(1, num) if num % dev == 0]
-    num_list.append(sum(list_dev))
-for i in range(1, len(num_list)):
-    for j in range(1,len(num_list)):
-        if i == num_list[j-1] and num_list[i-1] == j and i != num_list[i-1]:
+    sum_list.append(sum(list_dev))
+for i in range(1, len(sum_list)):
+    for j in range(1,len(sum_list)):
+        if i == sum_list[j-1] and sum_list[i-1] == j and i != sum_list[i-1]:
             friendly_list.append(i)
 [print(friendly_list[i], friendly_list[i+1]) for i in range(0, len(friendly_list), 2)]
 
