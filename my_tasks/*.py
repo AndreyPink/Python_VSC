@@ -13,4 +13,5 @@ print(*other)
 
 def palindrom(sequence):
     return [*sequence, *reversed(sequence)]
-print(f'<{*palindrom('123')}>')
+print(*palindrom('123'))
+

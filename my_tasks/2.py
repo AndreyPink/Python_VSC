@@ -20,3 +20,9 @@ print(my_dict_2)
 result = {}
 {result.update(elem) for elem in (my_dict_1, my_dict_2)}
 print(result)
+
+print('++++++++++++++++++++')
+# Вариант с использованием **
+result = {**my_dict_1, **my_dict_2}
+print(result)
+
