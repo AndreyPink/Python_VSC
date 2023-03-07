@@ -10,15 +10,29 @@
 # пара-ра-рам рам-пам-папам па-ра-па-дам    Парам пам-пам
 
 # Вариант перебором с использованием множества
+# text = input('Input text: ').split()
+# vowels = ['а', 'е', 'ё', 'и', 'о', 'у', 'э', 'ю', 'я']
+# vowels_text = set()
+# for phrase in text:
+#     vowels_text.add(len([elem for elem in phrase if elem in vowels]))
+# if len(vowels_text) == 1:
+#     print('Парам пам-пам')
+# else:
+#     print('Пам парам')
+
+
+# Вариант с использованием filter     
+def remove_consonants(letter): 
+    return True if letter in vowels else False
 text = input('Input text: ').split()
 vowels = ['а', 'е', 'ё', 'и', 'о', 'у', 'э', 'ю', 'я']
 vowels_text = set()
 for phrase in text:
-    vowels_text.add(len([elem for elem in phrase if elem in vowels]))
+    vowels_text.add(len(list(filter(remove_consonants, phrase))))
 if len(vowels_text) == 1:
-    print('Парам пам-пам')
+     print('Парам пам-пам')
 else:
-    print('Пам парам')
+     print('Пам парам')
     
 
 
