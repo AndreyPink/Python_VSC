@@ -50,9 +50,9 @@ print(count)
 # Решение через доп функцию (оптимизированное)
 def divisor(x):
     return sum([i for i in range(1, x//2 + 1) if x%i == 0])
-x = int(input('Input max: '))
-for i in range(1, x):
-    if divisor(divisor(i)) == i and i < divisor(i):
-        print(i, divisor(i))
+max = int(input('Input max: '))
+for num in range(1, max):
+    if divisor(divisor(num)) == num and num < divisor(num):
+        print(num, divisor(num))
 
 
