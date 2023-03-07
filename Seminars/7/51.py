@@ -14,9 +14,10 @@
 # print(‘different’)
 
 def same_by(characteristic, objects):
-    return list(filter(characteristic, objects)) == objects
+    return sum(map(characteristic, objects)) == 0
 values = [0, 2, 10, 6]                     
-if same_by(lambda x: x % 2 == 0, values):
+if same_by(lambda x: x % 2, values):
     print('same')
 else:
     print('different')
+    
