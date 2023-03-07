@@ -16,28 +16,43 @@
 # 300       220 284
 
 # Решение с помощью словарей
-# max_num = int(input('Input number: '))
-# num_dict = {}
-# friendly_dict = {}
-# for num in range(1, max_num):
-#     list_dev = [dev for dev in range(1, num) if num % dev == 0]
-#     num_dict[num] = sum(list_dev)
-# for key_1, value_1 in num_dict.items():
-#     for key_2, value_2 in num_dict.items():
-#         if key_1 == value_2 and value_1 == key_2 and key_1 != value_1 and key_1 not in friendly_dict.values():
-#             friendly_dict[key_1] = value_1
-# [print(key, value) for key, value in friendly_dict.items()]
+"""
+max_num = int(input('Input number: '))
+num_dict = {}
+friendly_dict = {}
+for num in range(1, max_num):
+    list_dev = [dev for dev in range(1, num) if num % dev == 0]
+    num_dict[num] = sum(list_dev)
+for key_1, value_1 in num_dict.items():
+    for key_2, value_2 in num_dict.items():
+        if key_1 == value_2 and value_1 == key_2 and key_1 != value_1 and key_1 not in friendly_dict.values():
+            friendly_dict[key_1] = value_1
+[print(key, value) for key, value in friendly_dict.items()]
+"""
 
 # Решение с помощью списков
+"""""
 max_num = int(input('Input number: '))
 sum_list = []
 friendly_list = []
+count = 0
 for num in range(1, max_num):
     list_dev = [dev for dev in range(1, num) if num % dev == 0]
     sum_list.append(sum(list_dev))
 for i in range(1, len(sum_list)):
     for j in range(1,len(sum_list)):
+        count +=1
         if i == sum_list[j-1] and sum_list[i-1] == j and i != sum_list[i-1]:
             friendly_list.append(i)
 [print(friendly_list[i], friendly_list[i+1]) for i in range(0, len(friendly_list), 2)]
+print(count)
+"""
+# Решение через доп функцию (оптимизированное)
+def divisor(x):
+    return sum([i for i in range(1, x//2 + 1) if x%i == 0])
+x = int(input('Input max: '))
+for i in range(1, x):
+    if divisor(divisor(i)) == i and i < divisor(i):
+        print(i, divisor(i))
+
 
