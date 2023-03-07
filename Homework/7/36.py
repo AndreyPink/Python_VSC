@@ -16,17 +16,14 @@
 #  6 12 18 24 30 36 
 
 
-
+# Стандартный вариант
 # def print_operation_table(num_rows=6, num_columns=6):
 #     for row in range(1, num_rows + 1):
 #         print(*[column*row for column in range(1, num_columns + 1)])
 # print_operation_table()      
 
-# ???? не понятно задание
-
-def print_operation_table(num_rows=6, num_columns=6):
+#Вариант с использованием lambda 
+def print_operation_table(operations, num_rows=6, num_columns=6):
     for row in range(1, num_rows + 1):
-        [print(column*row, end='\t') for column in range(1, num_columns + 1)]
-        print()
-    return 
-print_operation_table()     
+            print(*[operations(row, column) for column in range(1, num_columns + 1)])
+print_operation_table(lambda x, y: x*y)     
