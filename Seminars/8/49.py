@@ -24,7 +24,7 @@ def export_data_in_file():
                 with open(result_path, 'w', encoding='UTF-8') as file:
                     file.write(line)
                 print('Done')
-                check == True
+                check = True
     if check == False:
         print('Name not found')
                     
@@ -35,14 +35,22 @@ def show_data():
         for line in file.readlines():
             if name in line.lower():
                 print(line)
-                check == True
+                check = True
     if check == False:
         print('Name not found')
                 
 def import_data_in_file():
-    name = input('Input First, Last name and phone number (through a space): ').lower()
+    name = input('Input First, Last name and phone number (through a space): ')
     with open(data_path, 'a', encoding='UTF-8') as file:
         file.write(f'\n{name}')
+    print('Done')
+    
+def import_file_in_file():
+    source_path = input('Input source file path: ')
+    with open(source_path, 'r', encoding='UTF-8') as file:
+        for line in file.readlines():
+            with open(data_path, 'a', encoding='UTF-8') as file:
+                file.write(f'\n{line}')
     print('Done')
 
 data_path = 'Seminars/8/data.txt'
@@ -55,6 +63,8 @@ elif to_do == 2:
     export_data_in_file()
 elif to_do == 3:
     import_data_in_file()
+elif to_do == 4:
+    import_file_in_file()
 
 
 
