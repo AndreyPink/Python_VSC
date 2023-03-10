@@ -14,15 +14,7 @@
 #  4 8 12 16 20 24
 #  5 10 15 20 25 30
 #  6 12 18 24 30 36 
-
-
-# Стандартный вариант
-# def print_operation_table(num_rows=6, num_columns=6):
-#     for row in range(1, num_rows + 1):
-#         print(*[column*row for column in range(1, num_columns + 1)])
-# print_operation_table()      
-
-#Вариант с использованием lambda 
+ 
 def print_operation_table(operations, num_rows=6, num_columns=6):
     for row in range(1, num_rows + 1):
             print(*[operations(row, column) for column in range(1, num_columns + 1)])
