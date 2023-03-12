@@ -9,15 +9,11 @@
 # Ввод:                                     Вывод:
 # пара-ра-рам рам-пам-папам па-ра-па-дам    Парам пам-пам
 
-
 text = input('Input text: ').split()
 vowels = 'аеёиоуэюя'
 vowels_text = {len(list(filter(lambda x: x in vowels, phrase.lower()))) for phrase in text}
-if len(vowels_text) == 1:
+if vowels_text == 1:
      print('Парам пам-пам')
 else:
      print('Пам парам')
-    
-
-
 
