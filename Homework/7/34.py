@@ -12,7 +12,7 @@
 
 text = input('Input text: ').split()
 vowels = 'аеёиоуэюя'
-vowels_text = {len(list(filter(lambda x: x in vowels, phrase))) for phrase in text}
+vowels_text = {len(list(filter(lambda x: x in vowels, phrase.lower()))) for phrase in text}
 if len(vowels_text) == 1:
      print('Парам пам-пам')
 else:
