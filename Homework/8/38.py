@@ -5,7 +5,7 @@ def read_file(data_path): # возврат списка всех строк в �
 
 def wright_file(data_path, data, key): # удаление данных из файла и запись новых данных
     with open(data_path, key, encoding='UTF-8') as file:
-        if data > 3:
+        if len(data) > 3:
             file.write(f'\n{data}')
 
 def parsing_data(data, name): # поиск имени в строках данных и возврат строки с именем
