@@ -6,7 +6,7 @@ def read_file(data_path): # возврат списка всех строк в �
 def wright_file(data_path, data, key): # удаление данных из файла и запись новых данных
     with open(data_path, key, encoding='UTF-8') as file:
         if len(data) > 3:
-            file.write(f'\n{data}')
+            file.write(f'{data}')
 
 def parsing_data(data, name): # поиск имени в строках данных и возврат строки с именем
     my_string = ''
@@ -41,7 +41,7 @@ while True:
                         '\n6 - exit\n:'))
 
     if to_do != 3 and to_do != 6:
-        name = input('Input First or Last name: ').lower()
+        name = input('Input Last or First name: ').lower()
 
     if to_do == 1:
         data_file = read_file(data_path)
@@ -53,11 +53,11 @@ while True:
         wright_file(result_path, result_data, 'w')
 
     if to_do == 3:
-        data_file = input('Input First, Last name and phone number (through a space): ')
+        data_file = input('Input Last, First name and phone number (through a space): ')+'\n'
         wright_file(data_path, data_file, 'a')
 
     if to_do == 4:
-        action = input('Input change in First, Last name and phone number (through a space): ')
+        action = input('Input change in Last, First name and phone number (through a space): ')+'\n'
         change_delete(data_path, name, action)
 
     if to_do == 5:
