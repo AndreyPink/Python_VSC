@@ -1,6 +1,9 @@
+# отобразить гистограмму по кол-ву символов в веденном тексте 
+
 from collections import Counter
 
-text = filter(lambda x: x != ' ', 'Hello, world!')
+current_text = 'Hello, world!'
+text = filter(lambda x: x != ' ', current_text)
 my_string = ''
 result_string = ''
 full_list = []
