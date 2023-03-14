@@ -39,7 +39,7 @@ while True:
                         '\n5 - delete info in file'
                         '\n6 - exit\n:'))
 
-    if to_do != 3 or to_do != 6:
+    if to_do != 3 and to_do != 6:
         name = input('Input First or Last name: ').lower()
 
     if to_do == 1:
