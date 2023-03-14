@@ -36,10 +36,10 @@ while True:
                         '\n2 - export info in result file'
                         '\n3 - import new record'
                         '\n4 - change info in file'
-                        '\n5 - delete info in file\n: '
-                        '\n6 - exit'))
+                        '\n5 - delete info in file'
+                        '\n6 - exit\n:'))
 
-    if to_do != 3:
+    if to_do != 3 or to_do != 6:
         name = input('Input First or Last name: ').lower()
 
     if to_do == 1:
