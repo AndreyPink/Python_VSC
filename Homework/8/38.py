@@ -27,8 +27,8 @@ def change_delete(data_path, name, action):
     if check:
         print(f'Name "{name}" not found')
 
-data_path = 'Seminars/8/data.txt'
-result_path = 'Seminars/8/result.txt'
+data_path = 'Homework/8/data.txt'
+result_path = 'Homework/8/result.txt'
 
 to_do = int(input('Change action:'
                       '\n1 - show info'
