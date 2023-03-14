@@ -30,7 +30,7 @@ data_path = 'Seminars/8/data.txt'
 result_path = 'Seminars/8/result.txt'
 
 
-to_do = int(input('Input action:'
+to_do = int(input('Change action:'
                       '\n1 - show info'
                       '\n2 - export info in result file'
                       '\n3 - import new record'
