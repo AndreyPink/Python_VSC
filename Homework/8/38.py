@@ -30,33 +30,37 @@ def change_delete(data_path, name, action):
 data_path = 'Homework/8/data.txt'
 result_path = 'Homework/8/result.txt'
 
-to_do = int(input('Change action:'
-                      '\n1 - show info'
-                      '\n2 - export info in result file'
-                      '\n3 - import new record'
-                      '\n4 - change info in file'
-                      '\n5 - delete info in file\n: '))
+while True:
+    to_do = int(input('Change action:'
+                        '\n1 - show info'
+                        '\n2 - export info in result file'
+                        '\n3 - import new record'
+                        '\n4 - change info in file'
+                        '\n5 - delete info in file\n: '
+                        '\n6 - exit'))
 
-if to_do != 3:
-    name = input('Input First or Last name: ').lower()
+    if to_do != 3:
+        name = input('Input First or Last name: ').lower()
 
-if to_do == 1:
-    data_file = read_file(data_path)
-    print(parsing_data(data_file, name))
+    if to_do == 1:
+        data_file = read_file(data_path)
+        print(parsing_data(data_file, name))
 
-if to_do == 2:
-    data_file = read_file(data_path)
-    result_data = parsing_data(data_file, name)
-    wright_file(result_path, result_data, 'w')
+    if to_do == 2:
+        data_file = read_file(data_path)
+        result_data = parsing_data(data_file, name)
+        wright_file(result_path, result_data, 'w')
 
-if to_do == 3:
-    data_file = input('Input First, Last name and phone number (through a space): ')
-    wright_file(data_path, data_file, 'a')
+    if to_do == 3:
+        data_file = input('Input First, Last name and phone number (through a space): ')
+        wright_file(data_path, data_file, 'a')
 
-if to_do == 4:
-    action = input('Input change in First, Last name and phone number (through a space): ')
-    change_delete(data_path, name, action)
+    if to_do == 4:
+        action = input('Input change in First, Last name and phone number (through a space): ')
+        change_delete(data_path, name, action)
 
-if to_do == 5:
-    action = ''
-    change_delete(data_path, name, action)
+    if to_do == 5:
+        action = ''
+        change_delete(data_path, name, action)
+    if to_do == 6:
+        break
