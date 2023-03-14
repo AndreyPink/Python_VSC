@@ -3,7 +3,7 @@ def read_file(data_path): # возврат списка всех строк в �
     with open(data_path, 'r', encoding='UTF-8') as file:
         return file.readlines()
 
-def wright_file(data_path, data, key): # удаление данных из файла и запись новых данных
+def write_file(data_path, data, key): # удаление данных из файла и запись новых данных
     with open(data_path, key, encoding='UTF-8') as file:
         if len(data) > 3:
             file.write(f'{data}')
@@ -50,11 +50,11 @@ while True:
     if to_do == 2:
         data_file = read_file(data_path)
         result_data = parsing_data(data_file, name)
-        wright_file(result_path, result_data, 'w')
+        write_file(result_path, result_data, 'w')
 
     if to_do == 3:
         data_file = input('Input Last, First name and phone number (through a space): ')+'\n'
-        wright_file(data_path, data_file, 'a')
+        write_file(data_path, data_file, 'a')
 
     if to_do == 4:
         action = input('Input change in Last, First name and phone number (through a space): ')+'\n'
