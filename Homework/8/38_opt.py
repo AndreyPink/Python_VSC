@@ -3,8 +3,6 @@ def read_file(data_path): # возврат списка всех строк в �
     with open(data_path, 'r', encoding='UTF-8') as file:
         return file.readlines()
 
-from read_file import read_file
-
 def wright_file(data_path, data, key): # удаление данных из файла и запись новых данных
     with open(data_path, key, encoding='UTF-8') as file:
         file.write(f'\n{data}')
