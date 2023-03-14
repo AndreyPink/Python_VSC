@@ -1,6 +1,6 @@
 from collections import Counter
 
-text = 'hellohfyfkgkhjlhllkuiyyuo8uo'
+text = filter(lambda x: x != ' ', 'Hello, world!')
 my_string = ''
 result_string = ''
 full_list = []
@@ -11,6 +11,7 @@ for _ in range(max(my_dict.values())):
     for key, value in my_dict.items():
         my_dict[key] = value - 1
     full_list.append(my_list)    
+    
 for my_list in reversed(full_list):
     for i in my_list:
         my_string += i + ' '
