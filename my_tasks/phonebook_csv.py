@@ -1,9 +1,9 @@
 import pandas as pd
 
 path_csv = 'my_tasks/phonebook.csv'
-df = pd.DataFrame({'Names': ['Иванов Иван', 'Петров Петр', 'Васильев Василий'],
- 'Phones': [111, 222, 333]})
-df.to_csv(path_csv, index= False)
+# df = pd.DataFrame({'Names': ['Иванов Иван', 'Петров Петр', 'Васильев Василий'],
+#  'Phones': [111, 222, 333]})
+# df.to_csv(path_csv, index= False)
 
 
 # path_csv = 'https://drive.google.com/file/d/1DL6M6nZMXhAYvDJMai-_G6zXlK7aFCnf/view?usp=share_link'
@@ -38,7 +38,7 @@ file = pd.read_csv(path_csv)
 
 
 while True:
-    to_do = int(input('Change action:'
+    to_do = int(input('\nChange action:'
                         '\n1 - show book'
                         '\n2 - find contact'
                         '\n3 - import new record'
@@ -46,22 +46,31 @@ while True:
                         '\n5 - delete info in file'
                         '\n6 - exit\n:'))
 
-    if to_do != 1 and to_do != 6 and to_do != 3 and to_do != 5:
-            name = input('Input Last or First name: ').capitalize()
 
     if to_do == 1:
         print(file)
 
     if to_do == 2:
-        print(file[file['Name'] == name])
+        name = input('Input Last or First name: ')
+        for index, elem in enumerate(file['Names']):
+            if name in elem.lower():
+                print(file.loc[index])
 
     if to_do == 3:
-        new_contact = input('Введите Фамилию, Имя и телефон (через пробел): ').split()
-        file.loc[len(file.index )] = new_contact
-        file.to_csv(path_csv)
+        new_contact_name = input('Введите Фамилию и  Имя (через пробел): ')
+        new_contact_phone = input('Введите номер телефона: ')
+        file.loc[len(file.index )] = new_contact_name #!!!!!!!!!
+        file.to_csv(path_csv, index=False)
 
     if to_do == 4:
-        pass
+        print(file)
+        num = int(input('Введите номер контакта для изменения: '))
+        file.drop(labels= [num], axis=0, inplace=True)
+        new_contact_name = input('Введите Фамилию и  Имя (через пробел): ')
+        new_contact_phone = input('Введите номер телефона: ')
+        new_contact = new_contact_name+','+new_contact_phone #!!!!!!!!
+        file.loc[len(file.index )].replace = new_contact
+        file.to_csv(path_csv, index=False)
 
     if to_do == 5:
         print(file)
