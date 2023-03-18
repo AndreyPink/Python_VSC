@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Определяем название файла csv и заголовки столбцов
-filename = 'phonebook.csv'
+filename = 'my_tasks/phonebook.csv'
 headers = ['Name', 'Phone Number', 'Email']
 
 # Создаем функцию для добавления контакта в телефонный справочник
