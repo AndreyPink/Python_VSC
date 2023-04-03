@@ -20,7 +20,6 @@ def add_note():
     title = input('Введите заголовок заметки: ')
     body = input('Введите текст заметки: ')
     created_at = datetime.now().strftime('%d.%m.%Y %H:%M:%S')
-    # note_id = len(notes) + 1
     note_id = 1
     for note in notes:
         if note["id"] == note_id:
