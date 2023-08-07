@@ -9,7 +9,7 @@ class RedBlackTree {
 
         Node(int value) {
             this.value = value;
-            this.isRed = true;
+            this.isRed = true; // Новая нода всегда красная
         }
     }
 
@@ -18,14 +18,14 @@ class RedBlackTree {
     boolean push(int value) {
         if (root == null) {
             root = new Node(value);
-            root.isRed = false;
+            root.isRed = false; // Корень дерева всегда черный
             return true;
         } else {
             Node parent = null;
             Node node = root;
             while (node != null) {
                 if (node.value == value) {
-                    return false;
+                    return false; // Не добавляем дубликаты
                 }
                 parent = node;
                 if (node.value < value) {
@@ -34,50 +34,64 @@ class RedBlackTree {
                     node = node.left;
                 }
             }
+            // Создаем новую красную ноду
             Node newNode = new Node(value);
             if (parent.value < value) {
                 parent.right = newNode;
             } else {
                 parent.left = newNode;
             }
+            // Выполняем балансировку
             balanceAfterInsert(newNode, parent);
             return true;
         }
     }
 
     void balanceAfterInsert(Node node, Node parent) {
+        // Пока родитель нода красная, выполняем балансировку
         while (parent != null && parent.isRed) {
             Node grandParent = findGrandParent(node, parent);
             Node uncle = findUncle(node, parent, grandParent);
 
             if (uncle != null && uncle.isRed) {
+                // Дядя нода тоже красный - меняем цвета
                 parent.isRed = false;
                 uncle.isRed = false;
                 grandParent.isRed = true;
+                // Переходим к балансировке у дедушки
                 node = grandParent;
                 parent = findParent(node);
             } else {
                 if (parent == grandParent.left) {
                     if (node == parent.right) {
+                        // Левый поворот
                         rotateLeft(parent);
+                        // Обновляем ссылки
                         node = parent;
                         parent = findParent(node);
                     }
+                    // Правый поворот
                     rotateRight(grandParent);
+                    // Меняем цвета
                     grandParent.isRed = true;
                     parent.isRed = false;
                 } else {
                     if (node == parent.left) {
+                        // Правый поворот
                         rotateRight(parent);
+                        // Обновляем ссылки
                         node = parent;
                         parent = findParent(node);
                     }
+                    // Левый поворот
                     rotateLeft(grandParent);
+                    // Меняем цвета
                     grandParent.isRed = true;
                     parent.isRed = false;
                 }
             }
         }
+        // Корень дерева всегда черный
         root.isRed = false;
     }
 
@@ -172,7 +186,7 @@ public class hw_4_RedBlackTree {
         tree.push(6);
         tree.push(8);
 
-        System.out.println(tree.find(8)); 
+        System.out.println(tree.find(8));
         System.out.println(tree.find(10)); 
     }
 }
