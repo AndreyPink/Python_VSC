@@ -25,7 +25,7 @@ class RedBlackTree {
             Node node = root;
             while (node != null) {
                 if (node.value == value) {
-                    return false; // Не добавляем дубликаты
+                    return false; 
                 }
                 parent = node;
                 if (node.value < value) {
@@ -48,17 +48,15 @@ class RedBlackTree {
     }
 
     void balanceAfterInsert(Node node, Node parent) {
-        // Пока родитель нода красная, выполняем балансировку
+        // Пока родитель нода красный, выполняем балансировку
         while (parent != null && parent.isRed) {
             Node grandParent = findGrandParent(node, parent);
             Node uncle = findUncle(node, parent, grandParent);
 
             if (uncle != null && uncle.isRed) {
-                // Дядя нода тоже красный - меняем цвета
                 parent.isRed = false;
                 uncle.isRed = false;
                 grandParent.isRed = true;
-                // Переходим к балансировке у дедушки
                 node = grandParent;
                 parent = findParent(node);
             } else {
